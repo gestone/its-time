@@ -14,7 +14,7 @@ body {
 }
 
 #entries {
-    height: 650px;
+    height: 550px;
     overflow: auto;
 }
 
@@ -50,6 +50,16 @@ body {
 .no-entries-msg {
     text-align: center;
     font-size: 15px;
+}
+
+#buttons {
+    text-align: center;
+    a {
+        color: #ef5350;
+        background-color: white;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
 }
 
 // Style the popup messages.

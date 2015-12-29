@@ -34,18 +34,22 @@ function sendUpdatedLike(response, error, result) {
 
 module.exports = {
     phrase: function(req, res, next){
-        // Deals with the posting of the new posts.
-        var phrase = "IT'S " + req.body.phrase + " TIME";
-        var lat = req.body.lat;
-        var lng = req.body.lng;
-        var isoString = new Date(Date.now()).toUTCString();
+        if (req.body.phrase.length >= 20) {
+            res.status(400).send({error: 'Keep the phrase to under 20 characters'});
+        } else {
+            // Deals with the posting of the new posts.
+            var phrase = "IT'S " + req.body.phrase + " TIME";
+            var lat = req.body.lat;
+            var lng = req.body.lng;
+            var isoString = new Date(Date.now()).toUTCString();
 
-        var queryStr = 'INSERT INTO entries (post_time, lat, lng, what_time) VALUES ($1, $2, $3, $4) ' +
-            'RETURNING key';
+            var queryStr = 'INSERT INTO entries (post_time, lat, lng, what_time) VALUES ($1, $2, $3, $4) ' +
+                'RETURNING key';
 
-        var curEntry = {lat: lat, lng: lng, post_time: isoString, what_time: phrase};
+            var curEntry = {lat: lat, lng: lng, post_time: isoString, what_time: phrase};
 
-        Db.query(queryStr, [isoString, lat, lng, phrase], sendNewEntryBack(res, curEntry));
+            Db.query(queryStr, [isoString, lat, lng, phrase], sendNewEntryBack(res, curEntry));
+        }
     },
     like: function(req, res, next) {
         // Deals with a new like request.

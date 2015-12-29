@@ -13,6 +13,8 @@ module.exports = React.createClass({
         var lng = LocationStore.loc.lng;
         if (!lat || !lng) {
             Materialize.toast("You must reveal your location to tell the world what time it is.", 2500);
+        } else if (phrase.length > 20) {
+            Materialize.toast("Keep your time to under 20 characters.", 2500);
         } else {
             Api.createPost(phrase, lat, lng)
                .then(function() {
@@ -26,7 +28,7 @@ module.exports = React.createClass({
                         <div className="col s12 m8">
                             IT'S  
                                 <span className="input-field">
-                                    <input id="noun" name="noun" type="text"/>
+                                    <input id="noun" name="noun" type="text" onKeyPress={this.handleEnter}/>
                                 </span>
                             TIME
                         </div>
@@ -42,5 +44,12 @@ module.exports = React.createClass({
                         </div>
                     </h2>
                 </div>;
+    },
+    handleEnter: function(keyPress) {
+        var code = (keyPress.keyCode ? keyPress.keyCode : keyPress.which);
+        if (code === 13) { // 13 is the enter keycode 
+            // perform click
+            this.handleOnClick();
+        }
     }
 });
