@@ -6,31 +6,56 @@ body {
 #map {
     float: left;
     padding: 0 0 0 0;
-    min-height: 1000px;
-    height: 100%;
-    position: relative;
 }
 
 #sidebar {
     float: left;
-    min-height: 1000px;
+    height: 800px;
+}
+
+#entries {
+    height: 650px;
+    overflow: auto;
 }
 
 #live-title {
-    font-weight: bold;
     text-align: center;
+    font-weight: bold;
 }
 
 .live-feed {
     color: white;
-    padding: 10px;
+    padding: 20px;
     
     span {
-        padding: 10px;
         margin: 0;
     }
 
     p {
         padding: 10px;
+    }
+
+    // style like icon
+    .material-icons {
+        float: right;
+        margin-top: 5px;
+        cursor: pointer;
+    }
+}
+
+#live-feed-container {
+    margin-bottom: 0;
+}
+
+.no-entries-msg {
+    text-align: center;
+    font-size: 15px;
+}
+
+// Style the popup messages.
+#popup-content {
+    height: 100px;
+    h1 {
+        font-size: 20px;
     }
 }

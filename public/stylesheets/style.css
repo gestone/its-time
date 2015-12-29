@@ -1,5 +1,13 @@
+#footer {
+  margin: 0;
+  min-height: 70px;
+  color: white;
+  text-align: center; }
+  #footer a {
+    color: #f8bbd0; }
+
 #header {
-  height: 150px;
+  height: 100px;
   width: 100%; }
 
 #title-container, #prompt-container {
@@ -8,10 +16,6 @@
 #title, #prompt {
   margin: 0 0 0 30px;
   color: white; }
-
-#title {
-  padding-top: 20px;
-  font-size: 4em; }
 
 #noun {
   width: 500px;
@@ -22,13 +26,20 @@
   box-shadow: 0 0.5px 0 0 #FFF;
   text-transform: uppercase; }
 
-#prompt {
-  font-size: 6em; }
-
 #submit-time {
   font-size: 20px;
-  vertical-align: middle;
-  margin-left: 50px; }
+  vertical-align: middle; }
+
+@media only screen and (min-device-width: 0px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  #noun {
+    width: 100%; }
+  #prompt {
+    text-align: center;
+    padding: 10px;
+    margin: 0; } }
+
+#prompt {
+  font-size: 4em; }
 
 body {
   width: 100%;
@@ -36,27 +47,43 @@ body {
 
 #map {
   float: left;
-  padding: 0 0 0 0;
-  min-height: 1000px;
-  height: 100%;
-  position: relative; }
+  padding: 0 0 0 0; }
 
 #sidebar {
   float: left;
-  min-height: 1000px; }
+  height: 800px; }
+
+#entries {
+  height: 650px;
+  overflow: auto; }
 
 #live-title {
-  font-weight: bold;
-  text-align: center; }
+  text-align: center;
+  font-weight: bold; }
 
 .live-feed {
   color: white;
-  padding: 10px; }
+  padding: 20px; }
   .live-feed span {
-    padding: 10px;
     margin: 0; }
   .live-feed p {
     padding: 10px; }
+  .live-feed .material-icons {
+    float: right;
+    margin-top: 5px;
+    cursor: pointer; }
+
+#live-feed-container {
+  margin-bottom: 0; }
+
+.no-entries-msg {
+  text-align: center;
+  font-size: 15px; }
+
+#popup-content {
+  height: 100px; }
+  #popup-content h1 {
+    font-size: 20px; }
 
 .materialize-red.lighten-5 {
   background-color: #fdeaeb !important; }

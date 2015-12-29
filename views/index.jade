@@ -1,5 +1,13 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+doctype html
+html
+  head
+    title= title
+    link(href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+  body.main
+    script(type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js")
+    script(type="text/javascript" src="javascripts/materialize.min.js")
+    script(src="http://localhost/socket.io/socket.io.js")
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4UDwd720WkzV7kMyWWsXs8luMWEoRkYs")
+    script(src='/javascripts/main.js')
