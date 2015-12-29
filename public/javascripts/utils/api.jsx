@@ -1,8 +1,9 @@
 var Fetch = require('whatwg-fetch');
+var host = 'http://52.88.96.248:8080/';
 
 module.exports = {
     createPost: function(phrase, lat, lng) {
-        return fetch('http://localhost:8080/phrase', {
+        return fetch(host + '/phrase', {
             method: 'post',
             headers: {
                 'Accept': 'application/json',
@@ -16,7 +17,7 @@ module.exports = {
         });
     },
     likePost: function(key) {
-        return fetch('http://localhost:8080/like', {
+        return fetch(host + '/like', {
             method: 'post',
             headers: {
                 'Accept': 'application/json',

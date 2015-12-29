@@ -27,7 +27,6 @@ module.exports = React.createClass({
         this.setState({timeAgo: Util.calculateTimeAgo(this.props.post_time)});
     },
     likeTime: function() {
-        console.log(this.props);
         Api.likePost(this.props.id)
            .then(function() {
                Materialize.toast("Liked!", 1000);
