@@ -2,7 +2,7 @@ var Reflux = require('reflux');
 var Api = require('../utils/api');
 var Actions = require('../actions');
 var _ = require('lodash');
-var socket = io.connect('http://localhost');
+var socket = io.connect('http://52.88.96.248');
 
 module.exports = Reflux.createStore({
     listenables: [Actions],
