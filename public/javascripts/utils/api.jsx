@@ -1,5 +1,5 @@
 var Fetch = require('whatwg-fetch');
-var host = 'http://52.88.96.248:8080/';
+var host = 'http://52.88.96.248:8080';
 
 module.exports = {
     createPost: function(phrase, lat, lng) {
