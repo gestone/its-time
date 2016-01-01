@@ -22,7 +22,7 @@ module.exports = React.createClass({
         // Disable default UI to get rid of satilite view
         return <div id="map" className="col s12 m8">
             <Map
-                height={800}
+                height={screen.width < 500 ? 400 : 800}
                 ref="map"
                 initialZoom={8}
                 initialCenter={new GoogleMapsAPI.LatLng(this.state.lat, this.state.lng)}

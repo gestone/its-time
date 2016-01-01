@@ -4,7 +4,10 @@ var LocationStore = require('../stores/location-store');
 
 module.exports = React.createClass({
     componentDidMount: function() {
-        document.getElementById("noun").focus();
+        if (screen.width > 800) {
+            console.log("execute");
+            document.getElementById("noun").focus();
+        }
     },
     handleOnClick: function() {
         // handle with sending it off to the server to update live feed

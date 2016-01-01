@@ -18,7 +18,7 @@
   color: white; }
 
 #noun {
-  width: 500px;
+  width: 40%;
   text-align: center;
   height: 100%;
   font-size: 1em;
@@ -33,6 +33,14 @@
 @media only screen and (min-device-width: 0px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
   #noun {
     width: 100%; }
+  #prompt {
+    text-align: center;
+    padding: 10px;
+    margin: 0; } }
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1300px) {
+  #noun {
+    width: 350px; }
   #prompt {
     text-align: center;
     padding: 10px;
